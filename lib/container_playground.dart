@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const ContainerLayoutPlaygroundApp());
-}
-
-String textContent = "Hello";
-
+String textContent = "Container\nPlayground";
 final PageController controller = PageController(initialPage: 1);
 
 class ContainerLayoutPlaygroundApp extends StatelessWidget {
