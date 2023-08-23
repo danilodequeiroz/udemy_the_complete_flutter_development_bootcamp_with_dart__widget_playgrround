@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const LayoutPlaygroundApp());
+  runApp(const ContainerLayoutPlaygroundApp());
 }
 
 String textContent = "Hello";
 
-final PageController controller = PageController(
-  initialPage: 1
-);
+final PageController controller = PageController(initialPage: 1);
 
-class LayoutPlaygroundApp extends StatelessWidget {
-  const LayoutPlaygroundApp({super.key});
+class ContainerLayoutPlaygroundApp extends StatelessWidget {
+  const ContainerLayoutPlaygroundApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +29,11 @@ class LayoutPlaygroundApp extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             /// Use [Axis.vertical] to scroll vertically.
             controller: controller,
+
+            /// Event though we're playing with Container,
+            /// we are using Columns here in order to provide
+            /// support with the way PageView handle height
+            /// when populate
             children: <Widget>[
               Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
