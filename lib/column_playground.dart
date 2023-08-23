@@ -12,13 +12,9 @@ class ColumnLayoutPlaygroundApp extends StatelessWidget {
             backgroundColor: Colors.red[100],
             body: SafeArea(
               child: Column(
-                children: [
-                  symmetric(),
-                  all()],
+                children: [symmetric(), all()],
               ),
-            )
-        )
-    );
+            )));
   }
 }
 
