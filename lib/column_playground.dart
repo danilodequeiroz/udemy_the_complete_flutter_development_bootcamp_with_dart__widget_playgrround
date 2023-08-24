@@ -15,7 +15,7 @@ class ColumnLayoutPlaygroundApp extends StatelessWidget {
               child: Row(
                 children: [
                   Column(
-                      mainAxisSize: MainAxisSize.min,
+                      mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         for (MapEntry entry in [
@@ -26,7 +26,7 @@ class ColumnLayoutPlaygroundApp extends StatelessWidget {
                           container(index: entry.key, color: entry.value),
                       ]),
                   Column(
-                      mainAxisSize: MainAxisSize.min,
+                      mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         for (MapEntry entry in [
