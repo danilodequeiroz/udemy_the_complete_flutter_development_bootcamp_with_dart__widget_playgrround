@@ -13,13 +13,12 @@ class ColumnLayoutPlaygroundApp extends StatelessWidget {
             backgroundColor: Colors.red[100],
             body: SafeArea(
               child: Column(children: [
-                for (MapEntry entry
-                    in [
-                      Colors.blue[500],
-                      Colors.red[500],
-                      Colors.white
-                    ].asMap().entries)
-                   container(index: entry.key, color: entry.value),
+                for (MapEntry entry in [
+                  Colors.blue[500],
+                  Colors.red[500],
+                  Colors.white
+                ].asMap().entries)
+                  container(index: entry.key, color: entry.value),
               ]),
             )));
   }
