@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 String textContent = "Column\nPlayground";
-double measurement = 128;
+double measurement = 96;
 
 class ColumnLayoutPlaygroundApp extends StatelessWidget {
   const ColumnLayoutPlaygroundApp({super.key});
@@ -12,14 +12,55 @@ class ColumnLayoutPlaygroundApp extends StatelessWidget {
         home: Scaffold(
             backgroundColor: Colors.red[100],
             body: SafeArea(
-              child: Column(children: [
-                for (MapEntry entry in [
-                  Colors.blue[500],
-                  Colors.red[500],
-                  Colors.white
-                ].asMap().entries)
-                  container(index: entry.key, color: entry.value),
-              ]),
+              child: Row(
+                children: [
+                  Column(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        for (MapEntry entry in [
+                          Colors.blue[500],
+                          Colors.red[500],
+                          Colors.white
+                        ].asMap().entries)
+                          container(index: entry.key, color: entry.value),
+                      ]),
+                  Column(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        for (MapEntry entry in [
+                          Colors.blue[500],
+                          Colors.red[500],
+                          Colors.white
+                        ].asMap().entries)
+                          container(index: entry.key, color: entry.value),
+                      ]),
+                  Column(
+                      verticalDirection: VerticalDirection.up,
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        for (MapEntry entry in [
+                          Colors.blue[500],
+                          Colors.red[500],
+                          Colors.white
+                        ].asMap().entries)
+                          container(index: entry.key, color: entry.value),
+                      ]),
+                  Column(
+                      verticalDirection: VerticalDirection.down,
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        for (MapEntry entry in [
+                          Colors.blue[500],
+                          Colors.red[500],
+                          Colors.white
+                        ].asMap().entries)
+                          container(index: entry.key, color: entry.value),
+                      ]),
+                ],
+              ),
             )));
   }
 }
