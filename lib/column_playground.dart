@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 String textContent = "Column\nPlayground";
-double measurement = 96;
+double measurement = 64;
 
 class ColumnLayoutPlaygroundApp extends StatelessWidget {
   const ColumnLayoutPlaygroundApp({super.key});
@@ -51,6 +51,29 @@ class ColumnLayoutPlaygroundApp extends StatelessWidget {
                       verticalDirection: VerticalDirection.down,
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        for (MapEntry entry in [
+                          Colors.blue[500],
+                          Colors.red[500],
+                          Colors.white
+                        ].asMap().entries)
+                          container(index: entry.key, color: entry.value),
+                      ]),
+                  Column(
+                      verticalDirection: VerticalDirection.down,
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        for (MapEntry entry in [
+                          Colors.blue[500],
+                          Colors.red[500],
+                          Colors.white
+                        ].asMap().entries)
+                          container(index: entry.key, color: entry.value),
+                      ]), Column(
+                      verticalDirection: VerticalDirection.down,
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         for (MapEntry entry in [
                           Colors.blue[500],
